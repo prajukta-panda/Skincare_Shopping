@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form method="post">
+    <select name="skin_type">
+        <option>Oily</option>
+        <option>Dry</option>
+        <option>Combination</option>
+    </select>
+    <input name="concerns" placeholder="Acne">
+    <input name="ingredients" placeholder="Retinol">
+    <button>Get AI Suggestions</button>
+</form>
+
+<ul>
+{% for s in suggestions %}
+    <li>{{ s }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

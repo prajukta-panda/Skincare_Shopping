@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Find Your Perfect Skincare 🧠✨</h2>
+
+<!-- AI FORM -->
+<div class="card">
+    <select id="skinType">
+        <option>Oily</option>
+        <option>Dry</option>
+        <option>Combination</option>
+        <option>Sensitive</option>
+    </select>
+
+    <input id="concerns" placeholder="Acne, pigmentation, dryness">
+    <input id="ingredients" placeholder="Niacinamide, Retinol">
+
+    <button onclick="getAISuggestions()">Get AI Suggestions</button>
+
+    <ul id="aiResults"></ul>
+</div>
+
+<!-- SEARCH -->
+<input id="searchBox" placeholder="Search products..." onkeyup="searchProducts()">
+<ul id="suggestions" class="suggestions"></ul>
+
+
+<!-- PRODUCTS -->
+<div id="productGrid"></div>
+
+<!-- PAGINATION -->
+<div class="pagination">
+    <button id="prevBtn" onclick="prevPage()">⬅</button>
+    <span id="pageInfo"></span>
+    <button id="nextBtn" onclick="nextPage()">➡</button>
+</div>
+
+
+{% endblock %}
